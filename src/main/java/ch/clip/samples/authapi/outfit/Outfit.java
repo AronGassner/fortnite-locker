@@ -39,6 +39,11 @@ public class Outfit {
     @JoinColumn(name = "skin_id")
     private Skin skin;
 
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "appuser_id")
+    private AppUser appuser;
+
 
     protected Outfit() { }
 

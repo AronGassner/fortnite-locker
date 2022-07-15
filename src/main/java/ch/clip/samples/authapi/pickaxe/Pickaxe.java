@@ -20,6 +20,9 @@ public class Pickaxe {
     @OneToMany(mappedBy="pickaxe", fetch= FetchType.LAZY)
     private  List<Outfit> outfits = new ArrayList<Outfit>();
 
+    public Pickaxe(String name) {
+        this.name = name;
+    }
 
     protected Pickaxe() { }
 
@@ -30,4 +33,8 @@ public class Pickaxe {
     public void setName(String name) {
         this.name = name;
     }
+
+    public  List<Outfit> setOutfit(List<Outfit> outfits){
+        return this.outfits = outfits;
+    };
 }

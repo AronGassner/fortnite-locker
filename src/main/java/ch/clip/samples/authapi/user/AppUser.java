@@ -21,6 +21,10 @@ public class AppUser {
     @JoinColumn(name = "task_id", referencedColumnName = "id")
     private Task task;
 
+    @JsonManagedReference
+    @OneToMany(mappedBy="appuser", fetch= FetchType.LAZY)
+    private  List<Outfit> outfits = new ArrayList<Outfit>();
+
 
     public AppUser() {
         super();
@@ -70,5 +74,9 @@ public class AppUser {
     public String toString() {
         return "ApplicationUser [id=" + id + ", username=" + username + ", password=" + password + "]";
     }
+
+    public  List<Outfit> setOutfit(List<Outfit> outfits){
+        return this.outfits = outfits;
+    };
 
 }

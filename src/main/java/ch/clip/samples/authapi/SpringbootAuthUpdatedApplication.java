@@ -1,12 +1,14 @@
 package ch.clip.samples.authapi;
 
 import ch.clip.samples.authapi.outfit.Outfit;
+import ch.clip.samples.authapi.pickaxe.Pickaxe;
 import ch.clip.samples.authapi.service.TaskUserService;
 import ch.clip.samples.authapi.skin.Skin;
 import ch.clip.samples.authapi.task.Task;
 import ch.clip.samples.authapi.task.TaskRepository;
 import ch.clip.samples.authapi.user.AppUser;
 import ch.clip.samples.authapi.user.AppUserRepository;
+import ch.clip.samples.authapi.wrap.Wrap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,11 +75,15 @@ public class SpringbootAuthUpdatedApplication {
 			AppUser u3 = new AppUser("user2", "123");
 			AppUser u4 = new AppUser("user4-service", "123");
 
-			Skin s1 = new Skin("aa");
+			Skin s1 = new Skin("Bubatz");
+			Pickaxe p1 = new Pickaxe("pp");
+			Wrap w1 = new Wrap("wapbap");
 			List<Outfit> outfits = new ArrayList<>();
 			outfits.add(new Outfit("gg"));
 
 			s1.setOutfit(outfits);
+			p1.setOutfit(outfits);
+			w1.setOutfit(outfits);
 
 
 			u1.setTask(t1);

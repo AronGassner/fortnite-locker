@@ -19,6 +19,10 @@ public class Wrap {
     @OneToMany(mappedBy="wrap", fetch= FetchType.LAZY)
     private  List<Outfit> outfits = new ArrayList<Outfit>();
 
+    public Wrap(String name) {
+        this.name = name;
+    }
+
     protected Wrap() { }
 
     public long getId() {
@@ -28,4 +32,8 @@ public class Wrap {
     public void setName(String name) {
         this.name = name;
     }
+    public  List<Outfit> setOutfit(List<Outfit> outfits){
+        return this.outfits = outfits;
+    };
+
 }
